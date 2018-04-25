@@ -1,0 +1,38 @@
+#Tell Linguist to exlcude most, but not all CSS
+#This is the one we will keep - src/main/webapp/resources/css/* linguist-vendored
+target/classes/css/* linguist-vendored
+src/main/resources/css/* linguist-vendored
+target/ad-jee/resources/css/* linguist-vendored
+target/classes/bootstrap/css/* linguist-vendored
+src/main/resources/bootstrap/css/* linguist-vendored
+target/ad-jee/WEB-INF/classes/css/* linguist-vendored
+target/ad-jee/resources/bootstrap/css/* linguist-vendored
+src/main/webapp/resources/bootstrap/css/* linguist-vendored
+target/ad-jee/WEB-INF/classes/bootstrap/css/* linguist-vendored
+
+#Tell Linguist to exclude all JS.
+target/classes/jquery/* linguist-vendored
+src/main/resources/jquery/* linguist-vendored
+target/classes/bootstrap/js/* linguist-vendored
+target/ad-jee/resources/jquery/* linguist-vendored
+src/main/resources/bootstrap/js/* linguist-vendored
+src/main/webapp/resources/jquery/* linguist-vendored
+target/ad-jee/WEB-INF/classes/jquery* linguist-vendored
+target/ad-jee/resources/bootstrap/js/* linguist-vendored
+src/main/webapp/resources/bootstrap/js/* linguist-vendored
+target/ad-jee/WEB-INF/classes/bootstrap/js/* linguist-vendored
+
+#Tell Linguist to exlcude all SVG
+target/classes/bootstrap/fonts/* linguist-vendored
+src/main/resources/bootstrap/fonts/* linguist-vendored
+target/ad-jee/resources/bootstrap/fonts/* linguist-vendored
+src/main/webapp/resources/bootstrap/fonts/* linguist-vendored
+target/ad-jee/WEB-INF/classes/bootstrap/fonts/* linguist-vendored
+
+#Tell Linguist to exlcude all XML
+target/ad-jee/WEB-INF/* linguist-vendored
+src/main/webapp/WEB-INF/* linguist-vendored
+
+#Tell Linguist to exlcude all INI
+target/heroku/app/* linguist-vendored
+target/maven-archiver/* linguist-vendored
