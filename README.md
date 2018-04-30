@@ -3,6 +3,9 @@ Maven source code repository for my personal homepage, www.adriandavid.me.
 Written with Java/JSF/JEE, XHTML5, HTML5, CSS3, JQuery, &amp; Boostrap.
 Built and tested using Eclipse Oxygen on SUSE Linux, Linux Mint.
 
+# Platform 
+- Any supporting a JVM for Java SE 8+.
+
 # Requirements
 - Apache Maven 4.0 or greater
 - Java 8 u40 or greater
