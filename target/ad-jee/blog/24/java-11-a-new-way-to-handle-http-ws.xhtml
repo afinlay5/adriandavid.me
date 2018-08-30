@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<!-- /blog/24/how-to-make-a-cross-platform-mobile-app-with-java.xhtml -->
+
+<!--Java Server Faces, XTML -->
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <style>
+	*{
+		font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+	}
+
+	html, body {
+		margin: 0;
+		padding: 0;
+	}
+
+	h1 {
+		font-size: 50px;
+		margin-bottom: 17px;
+		color: #333;
+	}
+
+	h2 {
+		font-size: 24px;
+		line-height: 1.6;
+		margin: 30px 0 0 0;
+		margin-bottom: 18px;
+		margin-top: 33px;
+		color: #333;
+	}
+
+	h3 {
+		font-size: 30px;
+		margin: 10px 0 20px 0;
+		color: #333;
+	}
+
+	header {
+		width: 640px;
+		margin: auto;
+	}
+
+	section {
+		width: 640px;
+		margin: auto;
+	}
+
+	section p {
+		margin-bottom: 27px;
+		font-size: 20px;
+		line-height: 1.6;
+		color: #333;
+	}
+
+	section img {
+		max-width: 640px;
+	}
+
+	footer {
+		padding: 0 20px;
+		margin: 50px 0;
+		text-align: center;
+		font-size: 12px;
+	}
+	
+	.aspectRatioPlaceholder {
+		max-width: auto !important;
+		max-height: auto !important;
+	}
+
+	.aspectRatioPlaceholder-fill {
+		padding-bottom: 0 !important;
+	}
+	header,
+	section[data-field=subtitle] {
+	display: none;
+	}
+	</style><body><article class="h-entry"> </article> </body>
+	
+	<head>		  
+		<link rel="icon" type="image/png" href="../blog.ico" />
+	</head>
+
+	<h:head>
+
+	  <meta charset="utf-8"> </meta>
+	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> </meta>
+	  <meta name="Blog" content=""> </meta>
+	  <meta name="Adrian D. Finlay" content=""> </meta>
+	
+	  <title>Java 11: A New Way to handle HTTP &amp; WebSockets in Java! | Blog | Adrian D. Finlay</title>
+	
+	  <!-- Bootstrap core CSS, Custom Styles for Template -->
+	  <link href="../../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"> </link>
+	  <link href="../../resources/css/portfolio-item.css" rel="stylesheet"> </link>
+	  <link href="../../resources/css/center_image.css" rel="stylesheet"> </link>
+
+	  <!-- Place this tag in your head or just before your close body tag. -->
+	  <script src="https://buttons.github.io/buttons.js"></script>
+
+	</h:head>
+
+	<section data-field="subtitle" class="p-summary">
+		Once upon a time, using the Java SE (Standard Edition) APIs to do common HTTP operations such as REST API calls might have been described…
+	</section>
+
+	<h:body>
+	    <!-- Navigation -->
+	    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+	      <div class="container">
+	        <a class="navbar-brand" href="http://www.adriandavid.me/">Adrian D. Finlay</a>
+	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+	          <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarResponsive">
+	          <ul class="navbar-nav ml-auto">
+	            <li class="nav-item active">
+	              <a class="nav-link" href="../../index.xhtml">Home
+	                <span class="sr-only">(current)</span>
+	              </a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="../../about.xhtml">About</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="../../blog.xhtml">Blog</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="../../resume.xhtml">Resume</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="../../projects.xhtml">Projects</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="../../products.xhtml">Products</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="../../network.xhtml">Network</a>
+	            </li>
+	          </ul>
+	        </div>
+	      </div>
+	    </nav>
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+
+          <!-- Title -->
+          <h1 class="mt-4">Java 11: A New Way to handle HTTP &amp; WebSockets in Java!</h1>
+
+          <!-- Author -->
+          <p class="lead">
+            by
+            <a href="../../about.xhtml">Adrian D. Finlay</a>
+          </p>
+
+          <hr> </hr>
+          <!-- Date/Time -->
+          <p>Posted on August 10, 2018 at 1:06 PM UTC [-4] </p>
+          <hr> </hr>
+
+          <!-- Post Content -->
+          <section data-field="body" class="e-content">
+			<section name="acf9" class="section section--body section--first section--last">
+				<div class="section-content">
+					<div class="section-inner sectionLayout--insetColumn">
+						<figure name="bb3e" id="bb3e" class="graf graf--figure graf-after--h3">
+							<div class="aspectRatioPlaceholder is-locked" style="max-width: 500px; max-height: 320px;">
+								<!--Header Photo-->
+								<div class="aspectRatioPlaceholder-fill" style="padding-bottom: 64%;"></div>
+									<img class="graf-image" data-image-id="header.gif" data-width="500" data-height="320" src="res/header.gif"></img>
+								</div>
+								<!--Photo Caption-->
+								<figcaption class="imageCaption">
+									<center>
+										Source:
+										<a href="https://giphy.com/gifs/web-development-L8K62iTDkzGX6" data-href="https://giphy.com/gifs/web-development-L8K62iTDkzGX6" class="markup--anchor markup--figure-anchor" rel="noopener" target="_blank">Giphy</a>
+									</center>
+								</figcaption>
+							</figure>
+
+							<!--Begin Text-->
+							<p name="d76b" id="d76b" class="graf graf--p graf--hasDropCapModel graf--hasDropCap graf-after--figure">
+								<span class="graf-dropCap">O</span>nce upon a time, using the Java SE (Standard Edition) APIs to do common HTTP operations such as REST API calls might have been described as unnatural and cumbersome. Java 11 officially changes this. Coming with Java 11, the incubated HTTP APIs from Java 9 are now officially incorporated into the Java SE API. The <a href="http://openjdk.java.net/jeps/321" data-href="http://openjdk.java.net/jeps/321" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><em class="markup--em markup--p-em">JDK Enhancement Proposal (JEP)</em> 321</a> was the JEP behind this effort. Since being integrated into Java 11, the API has seen a few changes. As of Java 11, <strong class="markup--strong markup--p-strong">the API is now fully asynchronous.</strong> This article will attempt to show you basic use of the new API by performing a REST API call. We will be using <a href="http://jdk.java.net/11/" data-href="http://jdk.java.net/11/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">openJDK 11</a>.</p><p name="4ce4" id="4ce4" class="graf graf--p graf-after--p">The APIs use <code class="markup--code markup--p-code">java.util.concurrent.CompleteableFuture&lt;T&gt;</code> to provide asynchronous, non-blocking request/response behavior allowing for dependent actions. The API used new-style OOP method chaining, like a builder which returns an object that may be affected by the method call.</p><p name="b6cc" id="b6cc" class="graf graf--p graf-after--p">In addition to the standard documentation, you can learn how to practically apply the <code class="markup--code markup--p-code">CompleteableFuture&lt;T&gt;</code> API below.</p><div name="a33e" id="a33e" class="graf graf--mixtapeEmbed graf-after--p"><a href="https://dzone.com/articles/20-examples-of-using-javas-completablefuture" data-href="https://dzone.com/articles/20-examples-of-using-javas-completablefuture" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://dzone.com/articles/20-examples-of-using-javas-completablefuture"><strong class="markup--strong markup--mixtapeEmbed-strong">20 Examples of Using Java&#39;s CompletableFuture - DZone Java</strong><br></br><em class="markup--em markup--mixtapeEmbed-em">This post revisits Java 8&#39;s CompletionStage API and specifically its implementation in the standard Java library…</em>dzone.com</a><a href="https://dzone.com/articles/20-examples-of-using-javas-completablefuture" class="js-mixtapeImage mixtapeImage u-ignoreBlock" data-media-id="8195a29bce9ec5ab6971bce0e583d288" data-thumbnail-img-id="0*8mcbWgwHUY7jDr_u" style="background-image: url(https://cdn-images-1.medium.com/fit/c/160/160/0*8mcbWgwHUY7jDr_u);"></a></div><p name="baa4" id="baa4" class="graf graf--p graf-after--mixtapeEmbed"><br></br>The new <a href="https://download.java.net/java/early_access/jdk11/docs/api/java.net.http/java/net/http/package-summary.html" data-href="https://download.java.net/java/early_access/jdk11/docs/api/java.net.http/java/net/http/package-summary.html" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">HTTP APIs</a> can be found in <code class="markup--code markup--p-code">java.net.HTTP.*</code>.</p><p name="6078" id="6078" class="graf graf--p graf-after--p">The new APIs provide native support for HTTP 1.1/2, WebSocket. The core classes &amp; interface providing the core functionality include:</p><ul class="postList"><li name="ac94" id="ac94" class="graf graf--li graf-after--p">The HttpClient class, <code class="markup--code markup--li-code">java.net.http.HttpClient</code></li><li name="48b4" id="48b4" class="graf graf--li graf-after--li">The HttpRequest class, <code class="markup--code markup--li-code">java.net.http.HttpRequest</code></li><li name="df53" id="df53" class="graf graf--li graf-after--li">The HttpResponse&lt;T&gt; interface, <code class="markup--code markup--li-code">java.net.http.HttpResponse</code></li><li name="309a" id="309a" class="graf graf--li graf-after--li">The WebSocket interface, <code class="markup--code markup--li-code">java.net.http.WebSocket</code></li></ul><h3 name="89e3" id="89e3" class="graf graf--h3 graf-after--li"><br></br>The following are the types in the API:</h3><br></br><h4 name="3b1f" id="3b1f" class="graf graf--p graf-after--li"><strong class="markup--strong markup--p-strong">Classes</strong></h4><ul class="postList"><li name="34f6" id="34f6" class="graf graf--li graf-after--h4">java.net.http.HttpClient</li><li name="d595" id="d595" class="graf graf--li graf-after--li">java.net.http.HttpHeaders</li><li name="9697" id="9697" class="graf graf--li graf-after--li">java.net.http.HttpRequest</li><li name="a623" id="a623" class="graf graf--li graf-after--li">java.net.http.HttpRequest.BodyPublishers</li><li name="d45a" id="d45a" class="graf graf--li graf-after--li">java.net.http.HttpRequest.BodyHandlers</li><li name="12f4" id="12f4" class="graf graf--li graf-after--li">java.net.http.HttpRequest.BodySubscribers</li></ul><h4 name="3b1f" id="3b1f" class="graf graf--p graf-after--li"><strong class="markup--strong markup--p-strong">Interfaces</strong></h4><ul class="postList"><li name="fb9f" id="fb9f" class="graf graf--li graf-after--p">java.net.http.HttpClient.Builder</li><li name="d329" id="d329" class="graf graf--li graf-after--li">java.net.http.HttpClient.BodyPublisher</li><li name="a856" id="a856" class="graf graf--li graf-after--li">java.net.http.HttpRequest.BodyPublisher</li><li name="b05f" id="b05f" class="graf graf--li graf-after--li">java.net.http.HttpResponse&lt;T&gt;</li><li name="2cae" id="2cae" class="graf graf--li graf-after--li">java.net.http.HttpResponse.BodyHandler&lt;T&gt;</li><li name="6d92" id="6d92" class="graf graf--li graf-after--li">java.net.http.HttpResponse.BodySubscriber&lt;T&gt;</li><li name="23d2" id="23d2" class="graf graf--li graf-after--li">java.net.http.HttpResponse.PushPromiseHandler&lt;T&gt;</li><li name="e1c5" id="e1c5" class="graf graf--li graf-after--li">java.net.http.HttpResponse.ResponseInfo</li><li name="f638" id="f638" class="graf graf--li graf-after--li">java.net.http.WebSocket</li><li name="6678" id="6678" class="graf graf--li graf-after--li">java.net.http.WebSocket.Builder</li><li name="76b1" id="76b1" class="graf graf--li graf-after--li">java.net.http.WebSocket.Listener</li></ul><h4 name="3b1f" id="3b1f" class="graf graf--p graf-after--li"><strong class="markup--strong markup--p-strong">Enumeration</strong></h4><ul class="postList"><li name="bc3d" id="bc3d" class="graf graf--li graf-after--p">java.net.http.HttpClient.Redirect</li><li name="4205" id="4205" class="graf graf--li graf-after--li">java.net.http.HttpClient.Version</li></ul><h4 name="3b1f" id="3b1f" class="graf graf--p graf-after--li"><strong class="markup--strong markup--p-strong">Exception</strong></h4><ul class="postList"><li name="5c04" id="5c04" class="graf graf--li graf-after--p">java.net.http.HttpTimeoutException</li><li name="5101" id="5101" class="graf graf--li graf-after--li">java.net.http.WebSocketHandshakeException</li></ul><br></br><h3 name="b6cf" id="b6cf" class="graf graf--h3 graf-after--li">Pre-Java 11 vs. Java 11: Handling REST API Calls:</h3><br></br><h4 name="bdea" id="bdea" class="graf graf--h4 graf-after--h2">Pre-Java 11</h4><figure name="528e" id="528e" class="graf graf--figure graf--iframe graf-after--h4"><script src="https://gist.github.com/afinlay5/5d93f5a63c14f64b28057c177c5f3418.js"></script></figure><h4 name="3092" id="3092" class="graf graf--h4 graf-after--figure">Java 11</h4><figure name="bdb2" id="bdb2" class="graf graf--figure graf--iframe graf-after--h4"><script src="https://gist.github.com/afinlay5/0f7651b760fb3e23cb5d7ee0e55ded43.js"></script></figure><figure name="fd08" id="fd08" class="graf graf--figure graf-after--figure"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 448px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 63.9%;"></div><img class="graf-image" data-image-id="rest.png" data-width="746" data-height="477" src="res/rest.png"></img></div></figure><br></br><h3 name="566e" id="566e" class="graf graf--h3 graf-after--figure">My Impression</h3><p name="dc7c" id="dc7c" class="graf graf--p graf-after--h3">The new API is, semantically, everything you would expect of a Java API in 2018. For a start, it is verbose. Secondly, it is modular. Thirdly, it follows the new OOP style of method chaining (or using builders) to construct objects. Fourthly, it feels more natively HTTP.</p><h4 name="a693" id="a693" class="graf graf--h4 graf-after--p">Verbosity</h4><p name="9226" id="9226" class="graf graf--p graf-after--h4">The bane and (to some) the valor of java has always been verbosity. In Java, unlike most duck typed languages, it is easier to the eye to induce types and behavior. Java API typically follows a natural approach to naming as one might expect in the real world — it is usually intuitive. In addition, java’s typing semantics are explicit, adding to this verbosity. However, the typical verbosity was reduced in my examples through my frequent use of Java 10’s <strong class="markup--strong markup--p-strong">var</strong>. Nevertheless, the API feels a bit verbose.</p><p name="b329" id="b329" class="graf graf--p graf-after--p">However, credit must be given to the API writers for allowing the implementation to be as configured or as least configured as desired. The new OOP style has allowed for that. For that matter, it should also be noted that there are many things that one can configure in the HTTP request response cycle. Therefore, a great deal of verbosity is expected.</p><h4 name="481f" id="481f" class="graf graf--h4 graf-after--p">Modularity</h4><p name="a07b" id="a07b" class="graf graf--p graf-after--h4">Following the long standing unix tradition, long beloved by the Java community and in line with Java 9 efforts, the API is quite modular. The API is careful split into pieces that offer little to no cruft — one gets what one wants and usually nothing more. In addition, there is little dependency on classes not immediately relevant to the task at hand.</p><p name="273d" id="273d" class="graf graf--p graf-after--p">One exception to this rule that could be argued is the creation of a WebSocket. The most straightforward (and API recommended) way to create a WebSocket is to use an instance of WebSocket.Builder. WebSocket.Builder instances are most straightforwardly created by using <code class="markup--code markup--p-code">java.net.http.HttpClient.newWebSocketBuilder()</code>. Once that call has been made, it is typically chained with a call to <code class="markup--code markup--p-code">java.net.WebSocket.Builder.buildAsynce(URI uri, WebSocket.LIstener)</code> to produce a CompleteableFuture&lt;WebSocket&gt; object associated with the WebSocket. The WebSocket may then be retrieved by calling get() on the CompleteableFuture object.</p><h4 name="72bc" id="72bc" class="graf graf--h4 graf-after--p">Method Chaining</h4><p name="81fd" id="81fd" class="graf graf--p graf-after--h4">What I like about designing an API with method chaining as a means to construct objects is that it allows for objects that are as least configured as you would like them to be or as highly configured as you would like them to be. This result can be achieved by way of overloading constructors, of course, but after the object has been created one has to call a setter() method to update or a property on the object. With builders, one may retrieve the modified object all in one call. It plays well into handling things like HTTP, where there are many properties to specify. It would be unwieldy to have to put in a 10 argument constructor list to modify an object. This style has been welcomed by the OOP community at large and is here to stay.</p><h4 name="2c90" id="2c90" class="graf graf--h4 graf-after--p">Native HTTP Feel</h4><p name="a0a8" id="a0a8" class="graf graf--p graf-after--h4">Lastly, the API feels more native to HTTP. Method names such as body() and headers() are more appropriate ways to name a method than getContent() and getHeaderField(), getHeaderKey(). The old APIs seemed to me to be to abstract and concerned with networking in a general sense as opposed to HTTP. It’s also more intuitive in terms of specifying BodyHandlers, and so on. In the old API, this felt like an unnatural operation, or rather, specifying them felt like incorporating a foreign citizen; The design and use of the API can lead to some unexpected behavior. This is, however, just my impression.</p><h4 name="94b7" id="94b7" class="graf graf--h4 graf-after--p">Advantages over HTTPUrlConnection</h4><p name="dee2" id="dee2" class="graf graf--p graf-after--h4">The advantages that have personally caught my eye over the old API are:</p><ol class="postList"><li name="4553" id="4553" class="graf graf--li graf-after--p">Improved Support for HTTP, HTTP/2</li><li name="98c0" id="98c0" class="graf graf--li graf-after--li">Native HTTP Feel, HTTP is a first class citizen</li><li name="c9a2" id="c9a2" class="graf graf--li graf-after--li">Asynchronous, Non-Blocking Implementation</li><li name="3dce" id="3dce" class="graf graf--li graf-after--li">New API, works more naturally with modern language features</li></ol><br></br><h3 name="df29" id="df29" class="graf graf--h3 graf-after--li">The Source Code</h3><p name="0507" id="0507" class="graf graf--p graf-after--h3">Click the git logo to obtain the full source code, including examples using WebSockets or click <a href="https://github.com/afinlay5/Java11HttpWs"> here.</a> </p> 
+
+								<a href="https://github.com/afinlay5/Java11HttpWs">
+									<img src="res/git.png" alt="Java 11 HTTP/WebSockets git Repository" data-image-id="git.png" class="center" title="Java 11 HTTP/WebSockets git Repository"> </img>
+								</a>
+								<br></br> 
+
+								<!--Follow-->
+								<a class="github-button" href="https://github.com/afinlay5" data-size="large" data-show-count="true" aria-label="Follow @afinlay5 on GitHub">Follow @afinlay5</a>
+
+								<!--Watch-->
+								<a class="github-button" href="https://github.com/afinlay5/Java11HttpWs/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch afinlay5/Java11HttpWs on GitHub">Watch</a>
+
+								<!--Star-->
+								<a class="github-button" href="https://github.com/afinlay5/Java11HttpWs" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star afinlay5/Java11HttpWs on GitHub">Star</a>
+								
+								<!-- Fork -->
+								<a class="github-button" href="https://github.com/afinlay5/Java11HttpWs/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork afinlay5/Java11HttpWs on GitHub">Fork</a>
+
+								<!-- Download -->
+								<a class="github-button" href="https://github.com/afinlay5/Java11HttpWs/archive/master.zip" data-icon="octicon-cloud-download" data-size="large" aria-label="Download afinlay5/Java11HttpWs on GitHub">Download</a>
+
+								<br></br> 
+								<br></br>
+									<figure name="de77" id="de77" class="graf graf--figure graf-after--mixtapeEmbed">
+										<div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 394px;">
+											<div class="aspectRatioPlaceholder-fill" style="padding-bottom: 56.3%;"></div>
+												<img class="graf-image aspectRatioPlaceholder-fill" data-image-id="thats_all.jpeg" data-width="1280" data-height="720" src="res/thats_all.jpeg"></img>
+											</div>
+											<center>
+												Source: 
+												<figcaption class="imageCaption"><a href="https://www.youtube.com/watch?v=0FHEeG_uq5Y" data-href="https://www.youtube.com/watch?v=0FHEeG_uq5Y" class="markup--anchor markup--figure-anchor" rel="nofollow noopener nofollow noopener noopener" target="_blank">Looney Tunes Ending</a></figcaption>
+											</center>
+										</figure><figure name="f1ad" id="f1ad" class="graf graf--figure graf-after--figure graf--trailing">
+											<div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 350px;">
+												<div class="aspectRatioPlaceholder-fill" style="padding-bottom: 50%;">
+												</div>
+
+													<a href="https://goo.gl/w4Pbea" data-href="https://goo.gl/w4Pbea" class="graf-imageAnchor" data-action="image-link" data-action-observe-only="true"></a>
+											</div>
+										</figure>
+								</div>
+								</div></section>
+			</section>
+
+          <hr> </hr>
+
+          <!-- Comments Form -->
+          <div class="card my-4">
+            <h5 class="card-header">Leave a Comment:</h5>
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+          <!-- Word Count -->
+          <div class="card my-4">
+            <h4 class="card-header">View Count: 8,368</h4>
+          </div>
+
+          <!-- Categories Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Categories</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#">Java</a>
+                    </li>
+                    <li>
+                      <a href="#">Java 11</a>
+                    </li>
+                    <li>
+                      <a href="#">Programming</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#">Code</a>
+                    </li>
+                    <li>
+                      <a href="#">Technology</a>
+                    </li>
+                    <li>
+                      <a href="#">Software Development</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Author</h5>
+            <img src="../../../resources/images/prof.jpg" height="300" width="264"> </img>
+            <div class="card-body">
+              Adrian D. Finlay is a passionate engineer who revels at all things code.
+              Adrian mainly tinkers with C++, Java, C#, Python, SQL, HTML5, CSS3, &amp; Scala.
+              Adrian also holds the Oracle Certified Associate in Java SE 8 Programming.
+            </div>
+          </div>
+
+          <div class="card my-4">
+            <h5 class="card-header">Alternative Publications</h5>
+            <div class="card-body">
+              <!-- HackerNoon on Medium: http://bit.ly/JavaHttp2 -->
+            	<li xmlns="http://www.w3.org/1999/xhtml" name="ac94" id="ac94" class="graf graf--li graf-after--p">
+					<a href="https://bit.ly/JavaHttp2">Hackernoon/Medium: </a> <code class="markup--code markup--li-code"> https://bit.ly/JavaHttp2</code></li>
+            </div>
+          </div>
+
+          <div class="card my-4">
+            <h5 class="card-header">Download this article</h5>
+            <div class="card-body">
+          		<a href="doc/Java11HttpWS.pdf">Portable Document Format (PDF): </a> <code class="markup--code markup--li-code"> Java11HttpWS.pdf</code>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright © Adrian D. Finlay 2018. 
+        		 <br></br> All rights reserved.
+        </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="resources/jquery/jquery.min.js"></script>
+    <script src="resources/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </h:body>
+</html>

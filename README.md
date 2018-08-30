@@ -14,6 +14,7 @@ Built and tested using Eclipse Oxygen on SUSE Linux, Linux Mint.
 # Maven, Tomcat Steps
 - mvn build - Build Application
 - mvn clean install - Triggers JAR packaging.
+- mvn clean heroku:deploy-war - Deploys to Server
 - Run application on TomEE Plume server.
 
 # Known Problems

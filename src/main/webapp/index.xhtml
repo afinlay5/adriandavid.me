@@ -27,129 +27,91 @@
   <h:body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark p-1 mb-2 bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="http://www.adriandavid.me/">Adrian D. Finlay</a>
+        <a class="navbar-brand" href="index.xhtml">Adrian D. Finlay</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item active"> 
               <a class="nav-link" href="index.xhtml">Home
                 <span class="sr-only">(current)</span>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.xhtml">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="blog.xhtml">Blog</a>
             </li>
            	<li class="nav-item">
 	           <a class="nav-link" href="resume.xhtml">Resume</a>
-	        </li>
-            <li class="nav-item">
-              <a class="nav-link" href="projects.xhtml">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="products.xhtml">Products</a>
-            </li>
+	          </li>
             <li class="nav-item">
               <a class="nav-link" href="network.xhtml">Network</a>
             </li>
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown">Projects
+                  <span class="caret"></span>
+              </a>
+              
+              <ul class="dropdown-menu">
+                  <li><a href="https://github.com/afinlay5?tab=repositories">GitHub Portfolio</a></li>
+                  <li><a href="https://gist.github.com/afinlay5">GitHub Gists</a></li>
+                  <li><a href="https://gitlab.com/afinlay5">GitLab Portfolio</a></li>
+                  <li><a href="http://www.adriandavid.me/projects/IST302_EY_PROJ.zip">E&amp;Y Case Project</a></li>
+              </ul>
+            </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="stack.xhtml">Tech Stack</a>
+              <a class="nav-link" href="products.xhtml">Products</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <header>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-          <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('resources/images/home_slideshow/code2.png')">
-            <div class="carousel-caption d-none d-md-block">
-            	<h4>Programming</h4>
-            </div>
-          </div>
-          <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('resources/images/home_slideshow/sea.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-            	<h4>A Harbour</h4>
-            </div>
-          </div>
-          <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('resources/images/home_slideshow/code3.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-            	<h4>Blurry Code</h4>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </header>
+    <br></br><br></br>
 
     <!-- Page Content -->
     <section class="py-5">
-      <div class="container">
-        <h1>Welcome</h1>
-        <p> My Java Bean is: #{RastaManBean.name}. <br> </br> </p>
-       	
-	    <!-- Related Projects Row -->
-      	<h3 class="my-4">A Few Projects <br></br></h3>
-	      <div class="row">
-			
-			<div class="col-md-3 col-sm-6 mb-4">
-	          <a href="http://bit.ly/JavaEnterprise1">
-	            <img class="img-fluid" src="resources/index.xhtml/1_JE.png" alt=""> </img>
-	          </a>
-	        </div>
-			
-			<div class="col-md-3 col-sm-6 mb-4">
-	          <a href="http://bit.ly/Cplusplus17Ft">
-	            <img class="img-fluid" src="resources/index.xhtml/2_Cplusplus.png" alt=""> </img>
-	          </a>
-	        </div>
-	        
-			<div class="col-md-3 col-sm-6 mb-4">
-	          <a href="http://bit.ly/LambdaExpr">
-	            <img class="img-fluid" src="resources/index.xhtml/3_Lambda.png" alt=""> </img>
-	          </a>
-	        </div>
-			
-	        <div class="col-md-3 col-sm-6 mb-4">
-	          <a href="http://bit.ly/VarJava">
-	            <img class="img-fluid" src="resources/index.xhtml/4_JavaTen.png" alt=""> </img>
-	          </a>
-	        </div>     
-		
-     </div>
-     <!-- /.row -->
-        
-          
+      <div class="container" style="border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc; margin: 0 auto;">
+      
+        <div class="row">
+
+          <hr></hr>
+
+          <div class="col" style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; align-content: stretch; align-items: center;">
+            <img src="PROF.PNG" alt="Adrian D. Finlay" width="320" height="380" align="left" border="5" style="order: 0; flex: 0 1 auto; align-self: auto;" > </img>
+          </div>
+          <div class="col">
+            <p style="padding-top: 8px; padding-bottom: 2px">
+              <b>Adrian is a passionate Software Engineer, Technical Blogger, Tutor, Entrepreneur, &amp; and lifelong lover of learning. 
+              Adrian is an Oracle Certified Associate in Java SE 8 Programming (87%).</b> <br></br><br></br>
+              As a homage paid to his beloved Carribean roots, Adrian may be found writing under the pen name,"The <a href="https://en.wikipedia.org/wiki/West_Indies"> West Indian</a> Programmer".
+              Adrian has a diverse set of interests. Among these include programming languages, software engineering, fishing, spanish,
+              basketball, writing, barbering, music &amp; the arts, and the breeding agronomy of mangoes and other tropical fruits. A childhood companion of Adrian's,
+              <a href="https://en.wikipedia.org/wiki/Julie_(mango)"> the Julie mango</a>, holds a special place in his kernel. Though proficient in many languages, Adrian has a particular affection for the <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java programming language.</a><br></br><br></br>
+              Adrian welcomes various networking opportunities. A peek into his digital dossier, including social and professional handles can be found <a href="network.xhtml">here.</a>
+              If connecting on LinkedIn, please leave a note mentioning where we have ran into each other, so as to avoid erroneously being filtered out. <br></br><br></br>
+              Adrian's portfolio of selected technical &amp; academic work can be found, <a href="projects.xhtml">here.</a>
+              For serious and/or professional inquiries, Adrian can be reached at <a href="malito:info@adriandavid.me">info@adriandavid.me.</a>
+            </p>
+          </div>
+
+          <hr></hr>
+
+          <br></br>
+
+        </div>
       </div>
     </section>
     
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright © Adrian D. Finlay 2017 - 2018. All rights reserved.
-        		 <br></br> Proudly built with Java &#38; Jakarata Platform, Enterprise Edition 7 ™ . 
+        <p class="m-0 text-center text-white">© 2018 Adrian D. Finlay. All rights reserved.
+             <br></br> Proudly built with Java on Jakarata Platform, Enterprise Edition 7 ™ . 
         </p>
       </div>
       <!-- /.container -->
