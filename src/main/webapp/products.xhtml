@@ -2,6 +2,79 @@
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+ <style>
+  *{
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 50px;
+    margin-bottom: 17px;
+    color: #333;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 1.6;
+    margin: 30px 0 0 0;
+    margin-bottom: 18px;
+    margin-top: 33px;
+    color: #333;
+  }
+
+  h3 {
+    font-size: 30px;
+    margin: 10px 0 20px 0;
+    color: #333;
+  }
+
+  header {
+    width: 640px;
+    margin: auto;
+  }
+
+  section {
+    width: 640px;
+    margin: auto;
+  }
+
+  section p {
+    margin-bottom: 27px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  section img {
+    max-width: 640px;
+  }
+
+  footer {
+    padding: 0 20px;
+    margin: 50px 0;
+    text-align: center;
+    font-size: 12px;
+  }
+  
+  .aspectRatioPlaceholder {
+    max-width: auto !important;
+    max-height: auto !important;
+  }
+
+  .aspectRatioPlaceholder-fill {
+    padding-bottom: 0 !important;
+  }
+  header,
+  section[data-field=subtitle] {
+  display: none;
+  }
+  </style>
   
 <!-- PRODUCTS -->
 
@@ -25,45 +98,53 @@
 	</h:head>
 
 	<h:body>
-	    <!-- Navigation -->
-	    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-	      <div class="container">
-	        <a class="navbar-brand" href="http://www.adriandavid.me/">Adrian D. Finlay</a>
-	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-	          <span class="navbar-toggler-icon"></span>
-	        </button>
-	        <div class="collapse navbar-collapse" id="navbarResponsive">
-	          <ul class="navbar-nav ml-auto">
-	            <li class="nav-item active">
-	              <a class="nav-link" href="index.xhtml">Home
-	                <span class="sr-only">(current)</span>
-	              </a>
-	            </li>
-	            <li class="nav-item">
-	              <a class="nav-link" href="about.xhtml">About</a>
-	            </li>
-	            <li class="nav-item">
-	              <a class="nav-link" href="blog.xhtml">Blog</a>
-	            </li>
-	            <li class="nav-item">
-	           	  <a class="nav-link" href="resume.xhtml">Resume</a>
-	        	</li>
-	            <li class="nav-item">
-	              <a class="nav-link" href="projects.xhtml">Projects</a>
-	            </li>
-	            <li class="nav-item">
-	              <a class="nav-link" href="products.xhtml">Products</a>
-	            </li>
-	            <li class="nav-item">
-	              <a class="nav-link" href="network.xhtml">Network</a>
-	            </li>
-	            <li class="nav-item">
-	              <a class="nav-link" href="stack.xhtml">Tech Stack</a>
-	            </li>
-	          </ul>
-	        </div>
-	      </div>
-	    </nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark p-1 mb-2 bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.xhtml">Adrian D. Finlay</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"> 
+              <a class="nav-link" href="index.xhtml">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.xhtml">Blog</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="resume.xhtml">Resume</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="network.xhtml">Network</a>
+            </li>
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown">Projects
+                  <span class="caret"></span>
+              </a>
+              
+              <ul class="dropdown-menu">
+                  <li><a href="https://github.com/afinlay5?tab=repositories">GitHub Portfolio</a></li>
+                  <li><a href="https://gist.github.com/afinlay5">GitHub Gists</a></li>
+                  <li><a href="https://gitlab.com/afinlay5">GitLab Portfolio</a></li>
+                  <li><a href="http://www.adriandavid.me/projects/IST302_EY_PROJ.zip">E&amp;Y Case Project</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="products.xhtml">Products</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <br></br><br></br>
+    
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
